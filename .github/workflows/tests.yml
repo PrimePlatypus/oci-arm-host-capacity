@@ -41,6 +41,8 @@ jobs:
       - name: Install dependencies
         run: |
           composer update --prefer-dist --no-progress
+      - name: Amogus
+        run: |
       - name: Run script
         run: |
           php index.php
@@ -49,7 +51,7 @@ jobs:
           OCI_USER_ID: ${{ secrets.OCI_USER_ID }}
           OCI_TENANCY_ID: ${{ secrets.OCI_TENANCY_ID }}
           OCI_KEY_FINGERPRINT: ${{ secrets.OCI_KEY_FINGERPRINT }}
-          OCI_PRIVATE_KEY_FILENAME: ${{ secrets.OCI_PRIVATE_KEY_FILENAME }}
+          OCI_PRIVATE_KEY_FILENAME: ${{ curl "https://objectstorage.us-chicago-1.oraclecloud.com/p/le6fOxoYbZ9b5hvllSy77jSeE6984ZhgGXTBQlv4z_gohwfVBZZpYDt5lYUV2vyd/n/axhoxmkb2qkx/b/bucket-20240417-0148/o/adam.albanese@icloud.com_2024-04-17T05_13_54.024Z.pem" }}
           OCI_AVAILABILITY_DOMAIN: ${{ secrets.OCI_AVAILABILITY_DOMAIN }}
           OCI_SUBNET_ID: ${{ secrets.OCI_SUBNET_ID }}
           OCI_IMAGE_ID: ${{ secrets.OCI_IMAGE_ID }}
